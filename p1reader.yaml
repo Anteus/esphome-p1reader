@@ -18,7 +18,7 @@ captive_portal:
 
 # Enable logging
 logger:
-  level: DEBUG
+  level: INFO #DEBUG
   baud_rate: 0 # disable logging over uart
   
 # Enable Home Assistant API
@@ -30,8 +30,10 @@ ota:
 
 uart:
   id: uart_bus
-  tx_pin: TX
-  rx_pin: RX
+  rx_pin:
+    number: RX #3 #GPIO3
+    inverted: true
+  rx_buffer_size: 1024 #4096
   baud_rate: 115200
   
 sensor:
